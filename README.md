@@ -30,9 +30,9 @@
 
 > **[FUNC_ALIAS=alias] ./scripts/install.sh [TargetPath]**
 
-**TargetPath** 的默认值为： `${HOME}/.local`
-安装的脚本位于`${TARGET_PATH}/docker_env/${ENTRY}_${IMGNAME}_env`
-如不作修改，则生成的脚本为：`${HOME}/.local/docker_env/vim_test-u_env`
+**TargetPath** 的默认值为： `${HOME}/.local`  
+安装的脚本位于`${TARGET_PATH}/docker_env/${ENTRY}_${IMGNAME}_env`  
+如不作修改，则生成的脚本为：`${HOME}/.local/docker_env/vim_test-u_env`  
 如果安装时指定了**FUNC_ALIAS=alias**，则生成的脚本为：``${HOME}/.local/docker_env/alias_test-u_env``
 
 

@@ -28,19 +28,27 @@
 
 构建完毕后，在当前目录执行：
 
-> **./scripts/install.sh [TargetPath]**
+> **[FUNC_ALIAS=alias] ./scripts/install.sh [TargetPath]**
 
 **TargetPath** 的默认值为： `${HOME}/.local`
 安装的脚本位于`${TARGET_PATH}/docker_env/${ENTRY}_${IMGNAME}_env`
 如不作修改，则生成的脚本为：`${HOME}/.local/docker_env/vim_test-u_env`
+如果安装时指定了**FUNC_ALIAS=alias**，则生成的脚本为：``${HOME}/.local/docker_env/alias_test-u_env``
 
 
 ## 4. 使用方法
 对于用户alice, 参考安装脚本提示：
-<pre>First, exec: 
+<pre>First, exec:
     source /home/alice/.local/docker_env/vim_test-u_env
-Then, use: 
+Then, use:
     docker_vim [arg1]...</pre>
+
+如果安装时指定了**FUNC_ALIAS=alias**，则安装脚本提示：
+<pre>First, exec:
+    source /home/alice/.local/docker_env/alias_test-u_env
+Then, use:
+    docker_alias [arg1]...</pre>
+
 
 如需永久生效，可将
 >source /home/alice/.local/docker_env/vim_test-u_env

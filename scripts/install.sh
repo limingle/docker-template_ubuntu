@@ -15,7 +15,7 @@ install_path=${install_prefix}/docker_env
 
 [[ -d $install_path ]] || mkdir -p $install_path
 
-FUNC_NAME=${ENTRY:-bash}
+FUNC_NAME=${FUNC_ALIAS:-${ENTRY:-bash}}
 
 install_path=${install_path}/${FUNC_NAME##*/}_${IMGNAME:-"test-u"}_env
 

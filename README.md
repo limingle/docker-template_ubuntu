@@ -1,0 +1,48 @@
+# docker-template_ubuntu
+基于 ubuntu 构建 Docker 镜像的模板  
+利用此模板可快速构建基于 ubuntu 操作系统的容器镜像。
+
+
+## 1. 定制安装列表
+修改文件CUSTOM_INFO中的变量：
+
+| 变量             | 描述                		     |
+|-----------------|-----------------------------|
+| **IMGNAME**		  | 镜像名称，默认为 `test-u`		  |
+| **VERSION**		  | 镜像版本，默认为 `latest `		|
+| **PKGS**		    | 要安装的软件包列表            	|
+| **maintainer**	| 镜像维护者信息[可选]           |
+| **ENTRY**		    | 镜像入口程序，默认为 `/bin/bash`|
+
+
+## 2. 构建docker image
+在当前目录执行：
+
+> **./scripts/build.sh**
+
+
+会创建名称为 **&lt;username&gt;/&lt;IMGNAME&gt;:&lt;VERSION&gt;** 的docker image  
+例如：用户alice创建的默认image名称为 alice/test-u:latest
+
+## 3. 安装脚本
+
+构建完毕后，在当前目录执行：
+
+> **./scripts/install.sh [TargetPath]**
+
+**TargetPath** 的默认值为： `${HOME}/.local`
+安装的脚本位于`${TARGET_PATH}/docker_env/${ENTRY}_${IMGNAME}_env`
+如不作修改，则生成的脚本为：`${HOME}/.local/docker_env/vim_test-u_env`
+
+
+## 4. 使用方法
+对于用户alice, 参考安装脚本提示：
+<pre>First, exec: 
+    source /home/alice/.local/docker_env/vim_test-u_env
+Then, use: 
+    docker_vim [arg1]...</pre>
+
+如需永久生效，可将
+>source /home/alice/.local/docker_env/vim_test-u_env
+
+添加到${HOME}/.bashrc

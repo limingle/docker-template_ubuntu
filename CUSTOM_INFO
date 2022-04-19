@@ -1,0 +1,23 @@
+# Infomation for build:
+# * IMGTAG(IMGNAME:VERSION)
+# * PKGS
+# * maintainer [optional]
+
+# default IMGNAME: test-u
+IMGNAME=
+
+# default VERSION: latest
+VERSION=
+
+PKGS="\
+     vim \
+     exuberant-ctags \
+"
+maintainer="alexlee alexander.lee.cn@gmail.com"
+
+# infomation for run:
+# * IMGTAG(IMGNAME:VERSION)
+# * ENTRY
+
+# default entrypoint: /bin/bash
+ENTRY="vim"

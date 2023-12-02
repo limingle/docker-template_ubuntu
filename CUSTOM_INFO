@@ -1,23 +1,47 @@
 # Infomation for build:
+# * BASE_IMG(ubuntu:${DISTRO_VER})
 # * IMGTAG(IMGNAME:VERSION)
 # * PKGS
 # * maintainer [optional]
 
+
+# default DISTRO_VER: latest
+# you could change default value of DISTRO_VER here
+# you could also overwrite DISTRO_VER from cmdline as follows
+# DISTRO_VER="20.04" ./scripts/build.sh
+: ${DISTRO_VER:="latest"}
+
 # default IMGNAME: test-u
-IMGNAME=
+# you could change default value of IMGNAME here
+# you could also overwrite IMGNAME from cmdline as follows
+# IMGNAME="vim-u" ./scripts/build.sh
+: ${IMGNAME:="test-u"}
 
 # default VERSION: latest
-VERSION=
+: ${VERSION:="latest"}
 
-PKGS="\
+: ${PKGS:="\
      vim \
      exuberant-ctags \
-"
-maintainer="alexlee alexander.lee.cn@gmail.com"
+"}
 
+: ${maintainer:="alexlee alexander.lee.cn@gmail.com"}
+
+##################################################################
 # infomation for run:
 # * IMGTAG(IMGNAME:VERSION)
 # * ENTRY
 
+# Notice:
+# if you overwrite default value of IMGNAME or VERSION from cmdline
+# while building.
+# you must use the same value from cmdline when installing.
+
 # default entrypoint: /bin/bash
+# you could change default value of ENTRY here
+# you could also overwrite ENTRY from cmdline as follows
+# ENTRY="vim" ./scripts/install.sh
+: ${ENTRY:="/bin/bash"}
+
+# set ENTRY to vim for this example
 ENTRY="vim"

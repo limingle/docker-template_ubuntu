@@ -1,4 +1,5 @@
-FROM ubuntu as base
+ARG BASE_IMG
+FROM ${BASE_IMG} as base
 
 ENV DEBIAN_FRONTEND noninteractive
 ENV TZ=Asia/Shanghai

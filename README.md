@@ -8,11 +8,12 @@
 
 | 变量             | 描述                		     |
 |-----------------|-----------------------------|
-| **IMGNAME**		  | 镜像名称，默认为 `test-u`		  |
-| **VERSION**		  | 镜像版本，默认为 `latest `		|
-| **PKGS**		    | 要安装的软件包列表 (示例安装vim)  	|
+| **DISTRO_VER**	| 构建的基础版本(ubuntu版本)，默认为 `latest`		  |
+| **IMGNAME**		| 镜像名称，默认为 `test-u`		  |
+| **VERSION**		| 镜像版本，默认为 `latest `		|
+| **PKGS**		| 要安装的软件包列表 (示例安装vim)  	|
 | **maintainer**	| 镜像维护者信息[可选]           |
-| **ENTRY**		    | 镜像入口程序，默认为 `/bin/bash`|
+| **ENTRY**		| 镜像入口程序，默认为 `/bin/bash`|
 
 
 ## 2. 构建docker image
@@ -22,7 +23,10 @@
 
 
 会创建名称为 **${USERNAME}/${IMGNAME}:${VERSION}** 的docker image  
-例如：用户alice创建的默认image名称为 alice/test-u:latest
+例如：用户alice创建的默认image名称为 alice/test-u:latest  
+如果需要基于特定的ubuntu版本,可在命令行中设置DISTRO_VER变量。例如  
+
+> **DISTRO_VER=18.04 ./scripts/build.sh**
 
 ## 3. 安装脚本
 

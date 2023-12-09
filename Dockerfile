@@ -5,8 +5,9 @@ ENV DEBIAN_FRONTEND noninteractive
 ENV TZ=Asia/Shanghai
 
 ARG packages
-RUN sed -i \
-        -e 's/archive.ubuntu.com/mirrors.tuna.tsinghua.edu.cn/g' \
+ARG APT_MIRROR
+RUN sed -ri \
+        -e "s/(archive|security).ubuntu.com/${APT_MIRROR:-archive.ubuntu.com}/g" \
         /etc/apt/sources.list && \
     apt-get update && \
     apt-get install -y \

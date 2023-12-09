@@ -11,6 +11,7 @@ IMGTAG=${USERNAME:-$(id -un)}/${IMGNAME}:${VERSION}
 
 docker build \
     --build-arg BASE_IMG=${BASE_IMG} \
+    --build-arg APT_MIRROR=${APT_MIRROR} \
     --build-arg userid=$(id -u) \
     --build-arg groupid=$(id -g) \
     --build-arg username=$(id -un) \

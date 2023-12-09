@@ -11,6 +11,8 @@
 # DISTRO_VER="20.04" ./scripts/build.sh
 : ${DISTRO_VER:="latest"}
 
+: ${APT_MIRROR:="mirrors.tuna.tsinghua.edu.cn"}
+
 # default IMGNAME: test-u
 # you could change default value of IMGNAME here
 # you could also overwrite IMGNAME from cmdline as follows
